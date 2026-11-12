@@ -1,60 +1,52 @@
-# Báo cáo cá nhân — HoVaTen-MSSV
-
-Đổi tên file theo quy tắc `MSSV_HoTen.md`. Ví dụ: `20241234_NguyenVanAn.md`.
-
-Dữ liệu: 12 ảnh người COCO val2017 (Lin et al., 2014) và 8 ảnh chân dung Wikimedia Commons, chỉ dùng trong lớp.
+# Báo cáo cá nhân — DaoDuyHieu - 2A202603235
 
 ## 0. Thông tin học viên
 
-- Họ tên:
-- MSSV:
-- Email:
-- Link repository:
+- Họ tên: Đào Duy Hiếu
+- MSSV: 2A202603235
+- Email:26ai.hieudd2@vinuni.edu.vn
+- Link repository: https://github.com/HIEU2460/K5-L2-DAY04-DaoDuyHieu-2A202603235-KeypointPose
 - Phiên bản CVAT (Help → About):
-- Máy: hệ điều hành ___ · RAM ___ GB · chạy CVAT chế độ đầy đủ / lite
-- Bộ ảnh (`src/exports/assignment.json` do `lab.py setup` tạo): có / không
-- Giờ bắt đầu:
-- Giờ kết thúc:
+- Máy: hệ điều hành RAM  8GB · chạy CVAT chế độ lite
+- Bộ ảnh (`src/exports/assignment.json` do `lab.py setup` tạo): có
+- Giờ bắt đầu: 16:45
+- Giờ kết thúc: 19:30
 
 ## 1. Kiểm tra label (CP0)
 
 | Label | Kiểu | Số điểm | Tên điểm đúng bảng của lab? | Đúng thứ tự? | Số cạnh |
 |---|---|---:|---|---|---:|
-| `person` | | | | | |
-| `face` | | | | | |
+| `person` |Skeleton|17|có|có|19|
+| `face` |Skeleton|13|Có|có|15|
 
-Mẫu `person` dựng theo người quay mặt về camera (các điểm `left_*` nằm bên phải khung mẫu)? Có / Không
+Mẫu `person` dựng theo người quay mặt về camera (các điểm `left_*` nằm bên phải khung mẫu)? Trả lời: Có
 
 Cách đổi cờ `occluded` / `outside` cho **một điểm** trên phiên bản CVAT này (một câu):
-
-...
+Trả lời: Chọn đúng điểm con trong Skeleton, sau đó sử dụng thao tác Occluded hoặc Outside tương ứng, kiểm tra trạng thái của điểm và lưu annotation.
 
 ## 2. Số lượng đã gán và thời gian (CP1, CP2)
 
 | Nhóm ảnh | Số ảnh | Số skeleton đã gán | Số người dưới 60 px (không gán) | Số poster / gương / màn hình bỏ qua | Thời gian (phút) |
 |---|---:|---:|---:|---:|---:|
-| `easy` | 5 | | | | |
-| `occluded` | 3 | | | | |
-| `back` | 2 | | | | |
-| `small` | 1 | | | | |
-| `crowd` | 1 | | | | |
-| `faces` | 8 | | — | | |
+| `easy` | 4 | 4 | 0 | 0 | 90 |
+| `occluded` | 4 | 6 | 0 | 0 | 30 |
+| `back` | 3 | 5 | 0 | 0 | 30 |
+| `small` | 1 | 2 | 7 | 0 | 30 |
+| `crowd` | 0 | 0 | 0 | 0 | 0 |
+| `faces` | 8 | 8 | — | 0 | 30 |
 
-- Số ảnh người đã xong ở mốc phút 105: ___ / 10
+- Số ảnh người đã xong ở mốc phút 105: 4 / 12
 - Thời gian thực tế (phút): CP1 ___ · CP2 ___ · CP3 ___
 - Ảnh tốn thời gian nhất là ảnh nào, vì sao?
-
-...
+Trả lời: ảnh tốn thời gian nhất là ảnh 000000572411.jpg, vì có nhiều người cùng chung 1 ảnh, những người trong ảnh ngồi xa khiến hình bị mờ và ngồi với tư thế khó có thể gán.
 
 ## 3. Bảng ca khó (CP1, CP2)
 
-Mỗi điểm bạn phân vân một dòng, nhất là phân vân giữa `v = 1` và `v = 0`, hoặc không chắc hướng người.
-
 | Ảnh | Người / mặt | Điểm | Cờ đã chọn | Phân vân giữa | Lý do chọn |
 |---|---|---|---:|---|---|
-| | | | | | |
-| | | | | | |
-| | | | | | |
+|000000030960.jpg|Người #2 |left_ankle|V=0|V=0/V=2|Điểm nằm ngoài ảnh nên chuyển sang outside|
+|face_294580.jpg| Mặt #1 | eye_upper, eye_lower | V = 1 | v=1 / v=0 | Kính che vùng mắt, cần đánh giá khả năng xác định vị trí mí mắt. |
+| 000000332273.jpg | Người #3 | left_ankle, right_ankle | V = 2| left / right | Tư thế chân khiến việc phân biệt trái và phải khó hơn. |
 
 ## 4. Bảng tự review (CP3)
 
