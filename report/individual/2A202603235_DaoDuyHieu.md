@@ -58,12 +58,12 @@ Mã lỗi dùng đúng một trong: `lr_swap`, `vis_flag`, `position`, `missing`
 |---|---|---|---|---|---|
 | 000000030960.jpg | Người #2 | left_ankle | vis_flag | Điểm nằm ngoài ảnh nhưng đang để v=2. | Có |
 | 000000572411.jpg | Người #3 | Skeleton | extra | Kiểm tra người nhỏ dưới 60 px. | Có |
-| 000000572411.jpg | Người #4 | Skeleton | extra | Kiểm tra người nhỏ dưới 60 px. | Có |
+| 000000147780.jpg | Người #1 | Toàn bộ skeleton | ok | Kiểm tra đủ 17 điểm, thứ tự trái/phải và cờ visibility sau khi xuất. | Không cần |
 | 000000332273.jpg | Người #3 | ankle | lr_swap | Kiểm tra hướng trái/phải của chân. | Đã điều chỉnh |
 | 000000360811.jpg | Người #1, #2 | Tay và hông | ok | Hai người ngồi sau bàn, phần thân dưới bị che; các điểm ngoài vùng nhìn thấy cần kiểm tra lại. | Không cần |
 | face_294580.jpg | Mặt #1 | 8 điểm mắt | ok | Các điểm mắt được đặt quanh mí và khóe mắt, nhìn tương đối đúng vị trí. | Không cần |
 | face_380639.jpg | Mặt #1 | 8 điểm mắt | ok | Người cúi đầu, mắt nhìn xuống; cần chú ý vị trí mí trên và mí dưới. | Không cần |
-| face_294580.jpg | Mặt #1 | 8 điểm mắt | vis_flag | Kính râm che mắt, cần kiểm tra từng điểm đang đặt occluded có xác định được vị trí đáng tin cậy không. | Đã sửa |
+| face_145751.jpg | Mặt #1 | 13 điểm mặt | ok | Kiểm tra đủ 13 điểm, vị trí mí mắt, khóe mắt, mũi và khóe miệng. | Không cần |
 
 Tổng hợp số lỗi theo mã:
 
@@ -121,19 +121,19 @@ Công cụ cảnh báo cặp cổ tay (`left_wrist`, `right_wrist`) có vị tr�
 
 1. Label `person` trong label constructor (đủ 17 điểm có tên):
 
-   ![Skeleton person với 17 điểm có tên](images/image.png)
+   ![Skeleton person với 17 điểm có tên](images/1_label_person.png)
 
 2. Một người quay lưng đã gán, cờ đã đặt:
 
-   ![Người đã được gán skeleton và cờ điểm](images/image-1.png)
+   ![Người đã được gán skeleton và cờ điểm](images/2_nguoi_quay_lung.png)
 
 3. Một khuôn mặt đã gán 13 điểm, phóng to vùng mắt:
 
-   ![Khuôn mặt đã gán đủ 13 điểm](images/image-2.png)
+   ![Khuôn mặt đã gán đủ 13 điểm](images/3_mat_phong_to.png)
 
 4. Một đoạn JSON xuất của một người:
 
-   ![Đoạn JSON keypoints của một người](images/image-3.png)
+   ![Đoạn JSON keypoints của một người](images/4_json_export.png)
 
 Nguồn ảnh: COCO val2017 / Wikimedia Commons.
 
