@@ -21,7 +21,7 @@ person_keypoints_train2017.json
 !report/individual/images/*.jpg
 !report/individual/images/*.jpeg
 !docs/images/*.jpg
-!src/lab/images/*.jpg
+/src/lab/images/
 
 # Ground truth chỉ coach giữ
 coach_gt/
