@@ -121,19 +121,19 @@ Công cụ cảnh báo cặp cổ tay (`left_wrist`, `right_wrist`) có vị tr�
 
 1. Label `person` trong label constructor (đủ 17 điểm có tên):
 
-   ![Skeleton person với 17 điểm có tên](image.png)
+   ![Skeleton person với 17 điểm có tên](images/image.png)
 
 2. Một người quay lưng đã gán, cờ đã đặt:
 
-   ![Người đã được gán skeleton và cờ điểm](image-1.png)
+   ![Người đã được gán skeleton và cờ điểm](images/image-1.png)
 
 3. Một khuôn mặt đã gán 13 điểm, phóng to vùng mắt:
 
-   ![Khuôn mặt đã gán đủ 13 điểm](image-2.png)
+   ![Khuôn mặt đã gán đủ 13 điểm](images/image-2.png)
 
 4. Một đoạn JSON xuất của một người:
 
-   ![Đoạn JSON keypoints của một người](image-3.png)
+   ![Đoạn JSON keypoints của một người](images/image-3.png)
 
 Nguồn ảnh: COCO val2017 / Wikimedia Commons.
 
